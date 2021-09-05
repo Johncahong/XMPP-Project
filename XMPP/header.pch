@@ -1,0 +1,27 @@
+//
+//  header.pch
+//  XMPP学习
+//
+//  Created by Hello Cai on 16/8/26.
+//  Copyright © 2016年 Hello Cai. All rights reserved.
+//
+
+#ifndef header_pch
+#define header_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//XMPP单例
+#import "XmppManager.h"
+
+//服务器地址（改成自己电脑的IP地址）
+#define HOST @"192.168.3.185"
+
+
+//端口号
+#define KPort 5222
+
+#endif /* header_pch */
+
+

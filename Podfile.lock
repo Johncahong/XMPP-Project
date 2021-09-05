@@ -1,0 +1,43 @@
+PODS:
+  - CocoaAsyncSocket (7.6.4)
+  - CocoaLumberjack (3.6.2):
+    - CocoaLumberjack/Core (= 3.6.2)
+  - CocoaLumberjack/Core (3.6.2)
+  - KissXML (5.3.1):
+    - KissXML/All (= 5.3.1)
+  - KissXML/Additions (5.3.1):
+    - KissXML/Core
+  - KissXML/All (5.3.1):
+    - KissXML/Additions
+    - KissXML/Core
+  - KissXML/Core (5.3.1)
+  - libidn (1.35)
+  - XMPPFramework (4.0.0):
+    - XMPPFramework/default (= 4.0.0)
+  - XMPPFramework/default (4.0.0):
+    - CocoaAsyncSocket (~> 7.6)
+    - CocoaLumberjack
+    - KissXML (~> 5.2)
+    - libidn (~> 1.35)
+
+DEPENDENCIES:
+  - XMPPFramework (~> 4.0.0)
+
+SPEC REPOS:
+  trunk:
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+    - KissXML
+    - libidn
+    - XMPPFramework
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
+  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
+  KissXML: 5c8e0f2e8b9f071d3e1ae123dec3eb5da615c10c
+  libidn: e4576a956b797c584c77aaedfc6e3dd639b61bdc
+  XMPPFramework: 5d31ff9f73dce031b24bc49bcf88093627a3a86e
+
+PODFILE CHECKSUM: 68a1720b99da4071155fed5629c8137dd85f5375
+
+COCOAPODS: 1.8.4

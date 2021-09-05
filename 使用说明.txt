@@ -1,0 +1,15 @@
+用cocoaPods添加XMPPFramework库时，podfile必须加use_frameworks!
+
+xmpp工程运行前需要做一些配置：
+1.xmpp中服务器（HOST）设置成电脑wifi当前的ip地址
+2.启动xmpp服务器，终端命令：
+cd /usr/local/openfire/bin
+./openfire.sh
+3.以下如果已经配置好了（保证Openfire服务器有3个用户：hong、ming、wang），直接跳到第4步。
+点击打开系统偏好设置底部的Openfire插件，看status是否是绿色Running，为绿色Running说明xmpp服务器开启成功。点击Open Admin Console自动进入浏览器打开http://localhost:9090/页面，设置账号、密码、xmpp ip地址等相关配置。
+然后新建用户名hong、ming、wang，密码可以统一为123456。
+下载并安装Spark桌面软件，Spark用于让hong添加用户好友ming、wang。
+4.然后运行xmpp工程，输入用户名hong，密码123456，点击登录就能正常连接上xmpp服务器了。
+
+
+.xcappdata文件带有用户聊天的数据。以上步骤做完后，点击hong的好友ming或wang进入聊天控制器，发现聊天内容一开始是空的，将.xcappdata文件替换Xcode跑在真机的.xcappdata包（具体做法：选择window->Devices and Simulators，在Installed Apps中选中XMPP项目，然后点击齿轮，选择Replace Container，打开.xcappdata文件以便替换真机中的app），再次点击好友ming或wang进入聊天控制器就会出现聊天数据了。
