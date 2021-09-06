@@ -1,13 +1,14 @@
 ### 项目概述
-- 这是一个可以登录jabber账号，获取好友列表，并且能与好友进行聊天的项目。
-使用的是第三方库XMPPFramework框架来实现XMPP通讯。 
-- 项目准备工作：搭建好Openfire服务器，安装客户端Spark，具体步骤请见：[iOS实现XMPP通讯（一）搭建Openfire](/2021/09/03/iOS实现XMPP通讯（一）搭建Openfire/index.html)
+- 这是一个可以登录jabber账号，获取好友列表，并且能与好友进行聊天的项目。  
+使用的是第三方库XMPPFramework框架来实现XMPP通讯。   
+项目地址：[XMPP-Project](https://github.com/Johncahong/XMPP-Project)
+- 项目准备工作：搭建好Openfire服务器，安装客户端Spark，具体步骤请见：[iOS实现XMPP通讯（一）搭建Openfire](https://johncahong.github.io/2021/09/03/iOS-XMPP-communication(I)-with-building-Openfire/)  
 这样就可以登录本项目与登录Spark的另一用户进行XMPP通讯。
 - 项目结构概述：
-有三个视图控制器LoginViewController，ListViewController，ChatViewController
-LoginViewController：登录和注册xmpp账号界面
-ListViewController：获取花名册(好友列表)界面
-ChatViewController：和好友进行单聊界面
+有三个视图控制器LoginViewController，ListViewController，ChatViewController。  
+LoginViewController：登录和注册xmpp账号界面。  
+ListViewController：获取花名册(好友列表)界面。  
+ChatViewController：和好友进行单聊界面。  
 为此封装了XmppManager类，方便统一管理与服务器的连接、好友列表回调、聊天消息回调等代理方法。
 - 注意：由于XMPPFramework框架还依赖其他第三方库，如KissXML、CocoaAsyncSocket等，因此用cocoaPods添加XMPPFramework库时，podfile必须添加use_frameworks!，如下：
 ```c
@@ -21,8 +22,8 @@ end
 
 
 ### 注册登录
-- xmpp的登录流程是：先连接xmpp服务器，连接成功后再进行登录的鉴权，即校验密码的准确性。
-xmpp的注册流程是：先连接xmpp服务器，连接成功后再向xmpp服务器注册账号、密码。
+- xmpp的登录流程是：先连接xmpp服务器，连接成功后再进行登录的鉴权，即校验密码的准确性。  
+xmpp的注册流程是：先连接xmpp服务器，连接成功后再向xmpp服务器注册账号、密码。  
 XmppManager类提供一个连接xmpp服务器的方法，当点击LoginViewController的"注册"和"登录"按钮时调用该方法。（备注：islogin用来区分是登录还是注册），该方法如下：
 ```c
 //服务器地址（改成自己电脑的IP地址）
@@ -61,7 +62,7 @@ XmppManager类提供一个连接xmpp服务器的方法，当点击LoginViewContr
 ```
  HOST是Openfire后台服务器的主机名，我们在Openfire后台服务器中配置了主机名为127.0.0.1，让电脑充当Openfire服务器，因此HOST的值为我电脑网络的IP地址192.168.2.2。
 Openfire后台服务器配置的客户端连接端口默认是5222，因此这里KPort的值设为5222。后台配置如下：
- ![img](xmppcode01.png)
+ ![img](https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode01.png)
 
  输入账号、密码并按下注册或登录按钮后，app会向XMPP服务器进行连接请求，服务器连接成功会有相应的回调，在连接成功的回调中进行密码校验或账号注册操作。即如下所示：
 ```c
@@ -122,7 +123,7 @@ Openfire后台服务器配置的客户端连接端口默认是5222，因此这�
 }
 ```
  登录界面如下：
-![img](xmppcode02.png)
+<div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode02.png"/></div>
 
 
 
@@ -208,7 +209,7 @@ Openfire后台服务器配置的客户端连接端口默认是5222，因此这�
 }
 ```
  获取好友列表界面如下：
-![img](xmppcode03.png)
+ <div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode03.png"/></div>
 
 
 
@@ -363,7 +364,7 @@ Openfire后台服务器配置的客户端连接端口默认是5222，因此这�
     };
 }
 ```
-- 这里打算用归档（NSKeyedArchiver）的方式存储用户的聊天记录。
+- 这里打算用归档（NSKeyedArchiver）的方式存储用户的聊天记录。  
 由于每条聊天记录都是一个Message模型，Message模型必须实现归档（encodeWithCoder:）和解档（initWithCoder:），这样才能使用NSKeyedArchiver把模型数组存储到沙盒中。
 ChatViewController类中归档和解档代码如下：
 ```c
@@ -391,4 +392,4 @@ ChatViewController类中归档和解档代码如下：
 }
 ```
  单聊界面如下：
- ![img](xmppcode04.png)
+ <div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode04.png"/></div>
