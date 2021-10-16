@@ -36,6 +36,7 @@ NSString *const MessageHistory = @"MessageHistory";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showKeyboard:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideKeyboard:) name:UIKeyboardWillHideNotification object:nil];
     
+    self.title = _chatName;
     self.messageTF.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[ChatCell class] forCellReuseIdentifier:@"ChatCell"];
@@ -45,28 +46,14 @@ NSString *const MessageHistory = @"MessageHistory";
         [self.tableView reloadData];
     }
     
-    /*
-     <message xmlns="jabber:client" to="hong@192.168.2.2/t7i1lbc63" id="bFTVn-127" type="chat" from="wang@192.168.2.2/HellodeMacBook-Pro.local">
-       <thread>ykBwqQ</thread>
-       <body>好的</body>
-       <x xmlns="jabber:x:event">
-         <offline/>
-         <composing/>
-       </x>
-       <active xmlns="http://jabber.org/protocol/chatstates"></active>
-     </message>
-     */
     //设置回调
-    [XmppManager defaultManager].chatblock = ^(XMPPMessage *message){
+    [XmppManager defaultManager].getMessageBlock = ^(NSString *messageText){
         
-        NSXMLElement *body = [message elementForName:@"body"];
-        //NSLog(@"body = %@",body);   //打印：body = <body>NIHAO</body>
-        
-        if ([body stringValue]==nil || [[body stringValue] isEqualToString:@""]) {
+        if (messageText==nil || [messageText isEqualToString:@""]) {
             return;
         }
         Message *otherMes = [[Message alloc] init];
-        otherMes.contentString = [body stringValue];
+        otherMes.contentString = messageText;
         otherMes.isOwn = NO;
         //添加到数组当中
         [self.messageArr addObject:otherMes];
@@ -139,32 +126,10 @@ NSString *const MessageHistory = @"MessageHistory";
 
 //点击return键发送信息
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    /*
-    <message from="hong@192.168.2.2/t7i1lbc63" id="2222" to="wang@192.168.2.2" type="chat">
-      <body>准备吃饭了</body>
-    </message>
-    */
     if (textField.text.length == 0) {
         return YES;
     }
-     
-    NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
-    XMPPJID *jid = [XmppManager defaultManager].xmppStream.myJID;
-    //拼接属性节点
-    [message addAttributeWithName:@"from" stringValue:jid.description];
-    [message addAttributeWithName:@"id" stringValue:@"2222"];
-    [message addAttributeWithName:@"to" stringValue:self.chatName];
-    //什么类型xml包，chat表示单聊。lang表示语言，拼不拼接都无所谓
-    [message addAttributeWithName:@"type" stringValue:@"chat"];
-    
-    NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
-    //设置发送的信息
-    [body setStringValue:textField.text];
-    //添加子节点
-    [message addChild:body];
-    
-    //发送xml包请求
-    [[XmppManager defaultManager].xmppStream sendElement:message];
+    [[XmppManager defaultManager] sendMessageText:textField.text jidUserName:self.chatName];
     
     Message *myMes = [[Message alloc] init];
     myMes.contentString = textField.text;
@@ -202,4 +167,8 @@ NSString *const MessageHistory = @"MessageHistory";
     return nil;
 }
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:UIKeyboardWillShowNotification];
+    [[NSNotificationCenter defaultCenter] removeObserver:UIKeyboardWillHideNotification];
+}
 @end

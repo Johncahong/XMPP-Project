@@ -12,15 +12,14 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-//XMPP单例
-#import "XmppManager.h"
-
 //服务器地址（改成自己电脑的IP地址）
-#define HOST @"192.168.3.185"
-
+#define KHOST @"192.168.3.133"
 
 //端口号
 #define KPort 5222
+
+//XMPP单例
+#import "XmppManager.h"
 
 #endif /* header_pch */
 

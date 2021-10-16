@@ -18,9 +18,10 @@
 		F1789D5B26C40F7A00FB8C8B /* XMPPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1789D5A26C40F7A00FB8C8B /* XMPPTests.m */; };
 		F1789D6626C40F7A00FB8C8B /* XMPPUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1789D6526C40F7A00FB8C8B /* XMPPUITests.m */; };
 		F1789D9326C4168500FB8C8B /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1789D8726C4168300FB8C8B /* ChatViewController.m */; };
-		F1789D9426C4168500FB8C8B /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1789D8826C4168300FB8C8B /* ListViewController.m */; };
+		F1789D9426C4168500FB8C8B /* FriendListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1789D8826C4168300FB8C8B /* FriendListViewController.m */; };
 		F1789D9526C4168500FB8C8B /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = F1789D8926C4168300FB8C8B /* Message.m */; };
 		F1789D9626C4168500FB8C8B /* XmppManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1789D8A26C4168300FB8C8B /* XmppManager.m */; };
+		F1910B25271818F3002EBC4F /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F1910B24271818F3002EBC4F /* UserModel.m */; };
 		F1B0A53726C60A88006DDEF1 /* ChatCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B0A53626C60A88006DDEF1 /* ChatCell.m */; };
 /* End PBXBuildFile section */
 
@@ -65,13 +66,15 @@
 		F1789D6726C40F7A00FB8C8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1789D8626C4168200FB8C8B /* header.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = header.pch; sourceTree = "<group>"; };
 		F1789D8726C4168300FB8C8B /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		F1789D8826C4168300FB8C8B /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		F1789D8826C4168300FB8C8B /* FriendListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendListViewController.m; sourceTree = "<group>"; };
 		F1789D8926C4168300FB8C8B /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		F1789D8A26C4168300FB8C8B /* XmppManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XmppManager.m; sourceTree = "<group>"; };
 		F1789D8D26C4168400FB8C8B /* XmppManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XmppManager.h; sourceTree = "<group>"; };
-		F1789D8E26C4168400FB8C8B /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		F1789D8E26C4168400FB8C8B /* FriendListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendListViewController.h; sourceTree = "<group>"; };
 		F1789D9026C4168400FB8C8B /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		F1789D9126C4168500FB8C8B /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		F1910B23271818F3002EBC4F /* UserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		F1910B24271818F3002EBC4F /* UserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		F1B0A53526C60A88006DDEF1 /* ChatCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatCell.h; sourceTree = "<group>"; };
 		F1B0A53626C60A88006DDEF1 /* ChatCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,12 +153,14 @@
 				F1789D4226C40F7600FB8C8B /* SceneDelegate.m */,
 				F1789D4426C40F7600FB8C8B /* LoginViewController.h */,
 				F1789D4526C40F7600FB8C8B /* LoginViewController.m */,
-				F1789D8E26C4168400FB8C8B /* ListViewController.h */,
-				F1789D8826C4168300FB8C8B /* ListViewController.m */,
+				F1789D8E26C4168400FB8C8B /* FriendListViewController.h */,
+				F1789D8826C4168300FB8C8B /* FriendListViewController.m */,
 				F1789D9126C4168500FB8C8B /* ChatViewController.h */,
 				F1789D8726C4168300FB8C8B /* ChatViewController.m */,
 				F1B0A53526C60A88006DDEF1 /* ChatCell.h */,
 				F1B0A53626C60A88006DDEF1 /* ChatCell.m */,
+				F1910B23271818F3002EBC4F /* UserModel.h */,
+				F1910B24271818F3002EBC4F /* UserModel.m */,
 				F1789D9026C4168400FB8C8B /* Message.h */,
 				F1789D8926C4168300FB8C8B /* Message.m */,
 				F1789D8D26C4168400FB8C8B /* XmppManager.h */,
@@ -364,9 +369,10 @@
 				F1789D9626C4168500FB8C8B /* XmppManager.m in Sources */,
 				F1789D4626C40F7600FB8C8B /* LoginViewController.m in Sources */,
 				F1789D4026C40F7600FB8C8B /* AppDelegate.m in Sources */,
-				F1789D9426C4168500FB8C8B /* ListViewController.m in Sources */,
+				F1789D9426C4168500FB8C8B /* FriendListViewController.m in Sources */,
 				F1789D9526C4168500FB8C8B /* Message.m in Sources */,
 				F1B0A53726C60A88006DDEF1 /* ChatCell.m in Sources */,
+				F1910B25271818F3002EBC4F /* UserModel.m in Sources */,
 				F1789D9326C4168500FB8C8B /* ChatViewController.m in Sources */,
 				F1789D5126C40F7900FB8C8B /* main.m in Sources */,
 				F1789D4326C40F7600FB8C8B /* SceneDelegate.m in Sources */,
