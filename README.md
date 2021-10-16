@@ -25,4 +25,5 @@ end
 <div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode03.png"/></div>
 - 与好友聊天界面    
 <div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode04.png"/></div>
-- 更多项目描述请看：[OS实现XMPP通讯（二）XMPP编程](https://blog.csdn.net/Johncahong/article/details/120364042)
+
+- 更多项目的描述请看：[OS实现XMPP通讯（二）XMPP编程](https://johncahong.github.io/2021/09/05/iOS-XMPP-communication-with-XMPP-programming)
