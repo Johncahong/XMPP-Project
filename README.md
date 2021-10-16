@@ -21,8 +21,10 @@ end
 ```
 - 注册登录界面        
 <div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode02.png"/></div>
+
 - 添加好友和获取好友列表界面    
 <div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode03.png"/></div>
+
 - 与好友聊天界面    
 <div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode04.png"/></div>
 
