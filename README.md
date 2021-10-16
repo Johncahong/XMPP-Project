@@ -20,12 +20,12 @@ target 'XMPP' do
 end
 ```
 - 注册登录界面        
-<div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode02.png"/></div>
+<div align=center><img width="50%" src="https://img-blog.csdnimg.cn/cb1aa9cb0f03491480ac941d87ecd43c.jpg"/></div>
 
-- 添加好友和获取好友列表界面    
-<div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode03.png"/></div>
+- 添加好友和获取好友列表界面        
+<div align=center><img width="50%" src="https://img-blog.csdnimg.cn/3d35c433419d4b0bb45da305029eeaa1.png"/></div>
 
 - 与好友聊天界面    
-<div align=center><img width="50%" src="https://raw.githubusercontent.com/Johncahong/XMPP-Project/main/readmeImage/xmppcode04.png"/></div>
+<div align=center><img width="50%" src="https://img-blog.csdnimg.cn/f74f1fad02064b72b5a2764cfb8139ef.jpg"/></div>
 
 - 更多项目的描述请看：[OS实现XMPP通讯（二）XMPP编程](https://johncahong.github.io/2021/09/05/iOS-XMPP-communication-with-XMPP-programming)
