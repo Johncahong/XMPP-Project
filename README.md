@@ -2,7 +2,7 @@
 - 这是一个可以登录jabber账号，获取好友列表，并且能与好友进行聊天的项目。   
 使用的是第三方库XMPPFramework框架来实现XMPP通讯。   
 项目地址：[XMPP-Project](https://github.com/Johncahong/XMPP-Project)    
-如果文章和项目对你有帮助，还请给个Star⭐️，你的Star⭐️是我持续输出的动力，谢谢啦😘
+如果文章和项目对你有帮助，还请给个Star⭐️，你的Star⭐️是我持续输出的动力，谢谢啦
 - 项目准备工作：搭建好Openfire服务器，安装客户端Spark，具体步骤请见：[iOS实现XMPP通讯（一）搭建Openfire](https://johncahong.github.io/2021/09/03/iOS-XMPP-communication-with-building-Openfire/)  
 这样就可以登录本项目与登录Spark的另一用户进行XMPP通讯。
 - 项目结构概述：
